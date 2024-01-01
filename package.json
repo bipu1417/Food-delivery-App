@@ -1,0 +1,33 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "This is namaste React course by Akshay Saini",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bipu1417/namaste-react-course.git"
+  },
+  "keywords": [],
+  "author": "Biplab Mahato",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bipu1417/namaste-react-course/issues"
+  },
+  "homepage": "https://github.com/bipu1417/namaste-react-course#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
