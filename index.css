@@ -1,4 +1,5 @@
 .header {
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
@@ -17,6 +18,7 @@
 .nav-items > ul > li {
     padding: 10px;
     margin: 10px;
+    cursor: pointer;
 }
 
 .res-container {
@@ -45,4 +47,30 @@
 .filter-btn {
     margin: 10px;
     cursor: pointer;
+}
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-cards {
+    margin: 20px;
+    width: 200px;
+    height: 400px;
+    background-color: #f0f0f0;
+}
+
+.login {
+    padding: 15px  15px  15px  15px;
+    cursor: pointer;
+}
+
+.filter {
+    display: flex;
+}
+
+.user-card {
+    padding: 10px;
+    border: 1px solid black;
 }
