@@ -4,6 +4,7 @@ import resList from "../utils/mockData";
 import { swiggy_api_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
   
 const Body = () => {
     const [restList, setRestList] = useState([]);
@@ -26,6 +27,11 @@ const Body = () => {
 
     // Conditional Rendering
     // We can use Ternery operator also for conditional rendering
+
+    const onlineStatus = useOnlineStatus();
+    if(onlineStatus === false){
+        return <h1>Oops!!! Looks Like You're Offline!!!</h1>
+    }
 
     if(filteredRest.length === 0){
         return <Shimmer />
