@@ -62,8 +62,8 @@ const Body = () => {
                 }}>Top Rated</button>
                 </div>
                 <div className="m-4 p-4 flex items-center">
-                    <lable>UserName : </lable>
-                <input className="border border-black p-2" value={loggedInUser} onChange={(e) => setUserInfo(e.target.value)}></input>
+                    <label>UserName : </label>
+                <input className="border border-black p-2 m-2" value={loggedInUser} onChange={(e) => setUserInfo(e.target.value)}></input>
                 </div>
             </div>
             <div className="flex flex-wrap">
