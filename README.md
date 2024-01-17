@@ -175,7 +175,7 @@ Solution : Add type=“module” while injecting the Javascript file in HTML fil
 Add the type="module" attribute to the <script> tag.
 E.g. - <script type=“module” src=“./App.js”></script>
 
-# PARCEL :
+### PARCEL :
 - Dev Build
 - Local Server
 - HMR - Hot Module Replacement - Instant refresh
@@ -194,9 +194,9 @@ E.g. - <script type=“module” src=“./App.js”></script>
 - Tree Shaking - remove unused code
 - Different dev & prod bundles
 
-# PARCEL DOCUMENTATION - Read it.
+### PARCEL DOCUMENTATION - Read it.
 
-# While building the code for Production using Parcel - 
+### While building the code for Production using Parcel - 
 Command - npx parcel build index.html
 
 Check package.json if entry point is different then remove or make it same.
@@ -210,7 +210,7 @@ Dev builds are loaded from Dist and parcel-cache folder.
 ]
 
 
-### EPISODE 3:
+# EPISODE 3:
 —————
 * Script to execute the project in dev mode - to avoid running npx command every time 
 Setup the scripts in package.json file and use the command npm run “ScriptTag to execute”
@@ -246,7 +246,7 @@ Like - image src=“”, anchor
 ### To write multi-line JSX - the code has to be enclosed within parenthesis like 
 Const heading = (<h1>Namaste JS </h1>);
 
-# REACT COMPONENT
+### REACT COMPONENT
 Two types of component -
 1. Class Based Component - OLD way of writing code - uses JS class
 2. Functional Component -NEW way of writing code - uses JS functions
@@ -256,23 +256,23 @@ It is just like JS function. But First Letter must be in Capital Letter.
 Functional Component is a function which returns some JSX code or react element.
 
 E.g. - const HeadingComponent = () => {
-	return <h1>Namaste react Functional Component </h1>;
+	return "<h1>Namaste react Functional Component </h1>;"
 }
 
 This is same as below -
 
-ShortHand Syntax - const fn = () => <h1>Namaste react Functional Component </h1>;
+ShortHand Syntax - const fn = () => "<h1>Namaste react Functional Component </h1>;"
 
 OR,
 const HeadingComponent = () => {
-	<h1>Namaste react Functional Component </h1>;
+	'<h1>Namaste react Functional Component </h1>;'
 }
 
 OR you can use Normal Function too but you must have to return -
 
 const HeadingComponent = function () {
 	return(
-	<h1>Namaste react Functional Component </h1>;
+	'<h1>Namaste react Functional Component </h1>;'
 	);
 };
 
@@ -284,13 +284,13 @@ root.render(< HeadingComponent />);
 * Component Composition :
 Using a Component inside another component -
 e.g. - const Title = () => (
-    <h1 className="child2" tabIndex={5}>Namaste React Title</h1>
+    '<h1 className="child2" tabIndex={5}>Namaste React Title</h1>'
 );
 
 const HeadingComponent = () => (
     <div id="container">
     <Title />
-    <h1 className="child1" tabIndex={5}>Namaste React Component</h1>
+    '<h1 className="child1" tabIndex={5}>Namaste React Component</h1>'
     </div>
 );
 
@@ -323,7 +323,7 @@ Const HeaadingComponent = () => (
 );
 
 
-### EPISODE 4 : Talk is Cheap, Show me the code
+# EPISODE 4 : Talk is Cheap, Show me the code
 —————————————————————
 Plan for building FrontEnd App :
 1. You should exactly know what you are going to build
@@ -351,7 +351,7 @@ Here in component -
 Const RestComponent = (props) => {
 	console.log(props);
 	return (
-		<h1>Heading Test</h1>
+		'<h1>Heading Test</h1>'
 );
 };
 
@@ -362,7 +362,7 @@ You can de-structure the props on the fly like below -
 Const RestComponent = ({resName, cuisine}) => {
 	console.log(props);
 	return (
-		<h1>Heading Test</h1>
+		'<h1>Heading Test</h1>'
 );
 };
 
@@ -408,21 +408,21 @@ Episode 4 code :
 */
 
 
-### EPISODE 5 :
+# EPISODE 5 :
 ———————-
 Folder structure -> src/components/
 
 Never keep your hardcoded data in Component file.
 Hardcoded URL / Strings/ Logos etc.
 
-# There are 2 types of import and export -
+### There are 2 types of import and export -
 1. Default export/import - you use default export only once in a single file.
 	e.g. Export default Header;
 2. Named export/import - basically when you have to export multiple things from a single file we use this.
 	e.g. export const LOGO_URL = “https:www.oracle.com”;
 	Way to import named export - import { CDN_URL } from "../utils/constants";
 
-# H/W - Can we use Named export along with default export???
+### H/W - Can we use Named export along with default export???
 
 TO FILTER THE RESTAURANTS BASED ON AVGRATING > 4
 resList = resList.filter((res) => res.data.avgRating > 4);
@@ -433,7 +433,7 @@ State variable - super powerful variable - useState()
 
 Normal Variable vs Hooks - Normal variable won’t auto refresh based on data changes but react hook does.
 
-# Two Very important Hooks -
+### Two Very important Hooks -
 1. useState() - use to generate super powerful state variable in react
 	To use this first import this as named import 
 	- import { useState } from “react”;
@@ -483,7 +483,7 @@ Fetch data -
 *** Shimmer UI - Until the page loads completely, it shows some dummy skeletons of the web page
 
 * Conditional Rendering - using which condition we call the Shimmer UI to show dummy data
-# Rendering based on condition is known as Conditional Rendering
+### Rendering based on condition is known as Conditional Rendering
 
     if(restList.length === 0){
         return <Shimmer />
@@ -493,7 +493,7 @@ Fetch data -
 
 * Input box and search  : To track the value of the input box, need to have local variable to store the value of input
 
-### Episode 7 : Routing, Dive deeper into Hooks
+# Episode 7 : Routing, Dive deeper into Hooks
 
 * When is the useEffect Hook called?
 
@@ -573,7 +573,7 @@ This concept is known as Single Page Application.
 * LINK COMPONENT : which will help to navigate without reloading the whole page.
 This link component also comes from react-router-dom as well.
 
-# You can have 2 types of Routing -
+### You can have 2 types of Routing -
 1. Client side routing : Here we already loaded pages. Whenever any specific page request comes, the page will be loaded again.
 2. Server side routing : make a network call -> requested page will be loaded by server based on the request.
 
@@ -604,7 +604,7 @@ Then why we use Link then - So that react can tract the element and it’s rende
 * useRouteError : This hook helps to get the error while rendering.
 
 
-### EPISODE 8 : Lets get Classy
+# EPISODE 8 : Lets get Classy
 
 Syntax of Class based component -
 	class UserClass extends React.Component {
@@ -714,7 +714,7 @@ There are somethings that we do after the component is mounted successfully-
 	React Life Cycle diagram 
 	- check in the website -> https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
-# IMPORTANT NOTE ON CLASS COMPONENT LIFE CYCLE : 
+### IMPORTANT NOTE ON CLASS COMPONENT LIFE CYCLE : 
 	If the life cycle contains nested component/multiple Child component within it. Then 
 	the lifecycle of the component will be like this -
 	1. Parent constructor
@@ -787,7 +787,7 @@ There are somethings that we do after the component is mounted successfully-
 	### Single Responsibility Principle
 
 
-# Without this you can’t optimise your app - Very important to SCALE your application :
+### Without this you can’t optimise your app - Very important to SCALE your application :
 
 	Here in lazy loading, we call the component when it requires. To do that instead of import the component using import, we import the component using lazy() function provided 		by react. 	Here importing happens using the component folder location.
 		example = const Grocery = lazy(() => import(“./components/Grocery”));
@@ -809,13 +809,13 @@ Ans : smaller logical chunks
 You have to wrap the code sing Suspense Component to handle the component Suspend error in Lazy Loading.
 
 
-### EPISODE 10 : Jo Dikhta hai Wo Bikta Hai : 
+# EPISODE 10 : Jo Dikhta hai Wo Bikta Hai : 
 	Read About ; SCSS and SASS
 	SASS = Syntactically Awesome Style Sheets
 	SCSS = 
 	And Styled Component : React provides this to write better CSS
 
-# TAILWIND CSS : Tailwind CSS uses POSTCSS to transform CSS into Javascript
+### TAILWIND CSS : Tailwind CSS uses POSTCSS to transform CSS into Javascript
 	.postcssrc and tailwind.config.js - both we have to configure to use TAILWIND CSS.
 
 	Tailwind provides class names for every CSS that we write.
@@ -824,7 +824,7 @@ You have to wrap the code sing Suspense Component to handle the component Suspen
 	 <div className="m-4 p-4 w-[200px]">
 
 
-### EPISODE 11 :  Data is the new OIL
+# EPISODE 11 :  Data is the new OIL
 
 
 * HIGHER ORDER COMPONENT :
@@ -875,7 +875,7 @@ return (
 * Can we have Nested UserContext.Provider???
 
 
-### EPISODE 12 :  Lets Build Our Store - REDUX TOOL KIT
+# EPISODE 12 :  Lets Build Our Store - REDUX TOOL KIT
 
 * REDUX - 	Redux is not the only library to manage data store.
 	Advantage - handling data, managing states
@@ -923,7 +923,7 @@ return (
 
 
 
-### EPISODE 13: Time for Test
+# EPISODE 13: Time for Test
 
 	* Type of Testing :
 		1. Unit Testing
