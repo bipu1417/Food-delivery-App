@@ -1,71 +1,20 @@
-# NamasteReactCourse
-
-# PARCEL :
-- Dev Build
-- Local Server
-- HMR - Hot Module Replacement - Instant refresh
-- File Watching Algorithm - written in C++
-- Caching - Faster Builds
-- Image Optimization
-- Minification of files
-- Bundling of files
-- Compress files
-- Consistent Hashing
-- Code Splitting
-- Differential Bundling - support older browsers
-- Diagnostic 
-- Error Handling
-- HTTPS hosting
-- Tree Shaking - remove unused code
-
-# Food Ordering App - Episode 4
-/**
- * Planing for Namaste Food Delivery App
- * Header
- * - Logo
- * - Nav Items
- * Body
- * - Search
- * - Reastaurant Container
- * - - Reastaurant Cards
- * - - - Image
- * - - - Name of Rest
- * - - - Star rating
- * - - - cuisine
- * - - - delivery time
- * Footer
- * - Copyright
- * - Disclaimer
- * - Links/Address/Contacts etc.
- * 
-*/
-
-# Redux ToolKit
- - Install @reduxjs/toolkit and react-redux
- - Build our own store
- - Connect our store to our App
- - Create slice [Cart Slice]
- - Dispatch(Action)
- - Selector read the data
-
-
 # Episode 1:
 ————-
 
-* VS Code use 
-* Emmet - It generates some code for you/dev. Gives smooth developer experience
+VS Code use 
+Emmet - It generates some code for you/dev. Gives smooth developer experience
 
-* CDN - Content Delivery Network
+CDN - Content Delivery Network
 
 Library’s are hosted in here, so that dev can use it just by adding the CDN link into the code
 
 
-* CrossOrigin - 
+CrossOrigin - 
 
 
-* React.development.js - Core React File which has the core code for react functionalities
+React.development.js - Core React File which has the core code for react functionalities
 
-* React-dom.development = this is the bridge between React and browsers - because React is being used by Browsers and so many things like android.
+React-dom.development = this is the bridge between React and browsers - because React is being used by Browsers and so many things like android.
 
 So to connect to each different DOM we have this.
 
@@ -75,7 +24,7 @@ React.createElement = takes 3 params -
 3. HTML Vaues
 
 [
-Const heading = React.createElement(“h1”, {}, “Hello World”);
+// Const heading = React.createElement(“h1”, {}, “Hello World”);
 
 Console.log(heading); // Returns object - reactElement - becomes html which browser understands
 
@@ -85,30 +34,31 @@ Console.log(heading); // Returns object - reactElement - becomes html which brow
 
 3rd param - Children
 
-Const heading = React.createElement(“h1”, {id:”test”}, “Hello World”);
-Const root = ReactDOM.createRoot(document.getElementById(“root”));
+//Const heading = React.createElement(“h1”, {id:”test”}, “Hello World”);
+//Const root = ReactDOM.createRoot(document.getElementById(“root”));
 Root.render(heading);
 ]
 
-* When to use React/ReactDOM to create element - We have to inform React what is the root to do DOM manipulation or render things.
+### When to use React/ReactDOM to create element - 
+We have to inform React what is the root to do DOM manipulation or render things.
 
 When we are creating something and rendering inside that -  this is the task of ReactDOM
 So, have to use reactDOM to create the elements - to put things on browser or DOM
 
 
 //———————
-* To Create nested HTML Tags using React 
+To Create nested HTML Tags using React 
 //——————————
 
 Const parent = React.createElement(
 “div”,
 {id: “parent”},
 React.createElement(“div”, {id: “child”},
-React.createElement(“h1”, {}, “I am an H1 Tag”)
+//React.createElement(“h1”, {}, “I am an H1 Tag”)
 )
 );
 
-* To create siblings or multiple children under same parent
+//To create siblings or multiple children under same parent
 
 Const parent = React.createElement(
 “div”,
@@ -121,25 +71,25 @@ React.createElement(“h2”, {}, “I am an H2 Tag”) ]
 
 But Using JSX, will make things easier.
 
-* JSX
+***JSX
 
-* If in Index.html file - div with id = root is already having any other element or tag inside that then React will replace the content and refresh it very very fast.
+*** If in Index.html file - div with id = root is already having any other element or tag inside that then React will replace the content and refresh it very very fast.
 
-* React is not a framework - it’s a library 
-* Reason - It can work inside any portion of Application. Like you can apply react only on a single tag of the web browser.
+React is not a framework - it’s a library 
+Reason - It can work inside any portion of Application. Like you can apply react only on a single tag of the web browser.
 
 # Episode 2:
 —————
-* can react make production ready app or make our app fast?
+*** can react make production ready app or make our app fast?
 ——> No. React can’t make our app fast. It is all our other dependencies jar of other packages.
 
-* What is NPM?
+### What is NPM?
 —> NPM does not stand for Node Package manager. It does not have a full form.
 It manages packages.
 
-* Package.json : This is a configuration file for NPM. Keeps track of version installed in our app.
+*** Package.json : This is a configuration file for NPM. Keeps track of version installed in our app.
 
-* Most important package in our project : 
+### Most important package in our project : 
 —————————————————
 It is a Bundler - Whole code needs to be bundled - [ web pack/parcel/wit ] - create react app behind the scene uses web pack to build things up.
 
@@ -150,27 +100,27 @@ There are 2 kinds of dependencies our app can have -
 This is why we use -D param in NPM command
 Comand -> npm install -D parcel
 
-* Caret vs Tilde sign in package.json file :
+*** Caret vs Tilde sign in package.json file :
 ———————————————————
 Caret(^) - This can update minor version of the packages
 Tilde(~) - This can update major version of the packages
 
 This is always better to use Caret in package.json. I won’t break our app even it will get some update.
 
-* Package-lock.json :  
+Package-lock.json :  
 This keeps a track of exact version of packages
 Integrity : with SHA hash keys - to verify the same version in local & production as well.
 
-* Transitive dependency :
+### Transitive dependency :
 Though I have installed only PARCEL - but node modules contains many other folders of code. Because of My APP has Dependency on Parcel but Parcel can have it’s own dependency’s too. And those dependent packages can have their own dependencies. This is called Transitive Dependency.
 
 
-* NPM vs NPX :
+NPM vs NPX :
 Npm and npx are different. When we install any package we use npm command to install. Which does not execute the package. It fetches the package with required dependencies.
 
 But NPX use to execute the mentioned package in the command.
 
-* Error 1: Browser scripts cannot have imports or exports
+*** Error 1: Browser scripts cannot have imports or exports
 Solution : Add type=“module” while injecting the Javascript file in HTML file.
 Add the type="module" attribute to the <script> tag.
 E.g. - <script type=“module” src=“./App.js”></script>
@@ -194,7 +144,7 @@ E.g. - <script type=“module” src=“./App.js”></script>
 - Tree Shaking - remove unused code
 - Different dev & prod bundles
 
-### PARCEL DOCUMENTATION - Read it.
+*** PARCEL DOCUMENTATION - Read it.
 
 ### While building the code for Production using Parcel - 
 Command - npx parcel build index.html
@@ -212,12 +162,12 @@ Dev builds are loaded from Dist and parcel-cache folder.
 
 # EPISODE 3:
 —————
-* Script to execute the project in dev mode - to avoid running npx command every time 
+*** Script to execute the project in dev mode - to avoid running npx command every time 
 Setup the scripts in package.json file and use the command npm run “ScriptTag to execute”
 
 Like - npm run start or npm run build or npm start
 
-* React Element :
+### React Element :
 ——————-
  JSX -> Javascript syntax to create react element - makes developers life easier. - JSX isn’t html in js. It is html like syntax. JSX is transpiled to React Element and then react element is rendered as an HTML element.
 
@@ -226,19 +176,19 @@ Const jsxHeading = <h1> Namaste Javascript </h1>;
 JSX code is transpired before it reaches to JS Engine. JS Engine receives the code which it can understand.
 Transpile - converted to the understandable code & It is done by PARCEL [Babel package]
 
-* BABEL - Javascript compiler or transpiler
+BABEL - Javascript compiler or transpiler
 
 JSX -> Converted to React create Element -> then rendered as an HTML Element
 
 BABEL is doing all that task of conversion.
 
-* READ BABEL DOCUMENTATION - Read it
+*** READ BABEL DOCUMENTATION - Read it
 
-* JSX Vs HTML -
+JSX Vs HTML -
 HTML accepts class attribute but JSX accepts className attribute.
 JSX accepts only Camel Case attributes 
 
-* TASK
+*** TASK
 Find out various tags of attributes in JSX
 
 Like - image src=“”, anchor
@@ -246,7 +196,7 @@ Like - image src=“”, anchor
 ### To write multi-line JSX - the code has to be enclosed within parenthesis like 
 Const heading = (<h1>Namaste JS </h1>);
 
-### REACT COMPONENT
+*** REACT COMPONENT
 Two types of component -
 1. Class Based Component - OLD way of writing code - uses JS class
 2. Functional Component -NEW way of writing code - uses JS functions
@@ -256,45 +206,45 @@ It is just like JS function. But First Letter must be in Capital Letter.
 Functional Component is a function which returns some JSX code or react element.
 
 E.g. - const HeadingComponent = () => {
-	return "<h1>Namaste react Functional Component </h1>;"
+	return <h1>Namaste react Functional Component </h1>;
 }
 
 This is same as below -
 
-ShortHand Syntax - const fn = () => "<h1>Namaste react Functional Component </h1>;"
+ShortHand Syntax - const fn = () => <h1>Namaste react Functional Component </h1>;
 
 OR,
 const HeadingComponent = () => {
-	'<h1>Namaste react Functional Component </h1>;'
+	<h1>Namaste react Functional Component </h1>;
 }
 
 OR you can use Normal Function too but you must have to return -
 
 const HeadingComponent = function () {
 	return(
-	'<h1>Namaste react Functional Component </h1>;'
+	<h1>Namaste react Functional Component </h1>;
 	);
 };
 
 Both are Functional Component.
 
-* How to render functional components ?
+*** How to render functional components ?
 root.render(< HeadingComponent />);
 
-* Component Composition :
+*** Component Composition :
 Using a Component inside another component -
 e.g. - const Title = () => (
-    '<h1 className="child2" tabIndex={5}>Namaste React Title</h1>'
+    <h1 className="child2" tabIndex={5}>Namaste React Title</h1>
 );
 
 const HeadingComponent = () => (
     <div id="container">
     <Title />
-    '<h1 className="child1" tabIndex={5}>Namaste React Component</h1>'
+    <h1 className="child1" tabIndex={5}>Namaste React Component</h1>
     </div>
 );
 
-* You can execute any JavaScript code inside two Curly Braces in JSX
+*** You can execute any JavaScript code inside two Curly Braces in JSX
 
 Javascript inside JSX - 
 Const title = “Namaste Biplab”;
@@ -309,7 +259,7 @@ Const HeadingCompoenent = () => {
 
 JSX prevents malicious attacks - like cross-site scripting. Always sanitise code before execution.
 
-* We can call JS Function or Functional Component	in same way.
+*** We can call JS Function or Functional Component	in same way.
 E.g. - 
 Const Title = () => (
 	<h1>Namaste JS Title </h1>
@@ -340,7 +290,7 @@ Like style = {styleCard}
 
 Style in JSX accepts Javascript objects. 
 
-* PROPS :
+*** PROPS :
 	To pass data into component dynamically we use props aka properties. These are just normal argument to functions.
 Props are Object. Whatever arguments user passes to a Component - props will bundle that and store as an object.
 
@@ -351,7 +301,7 @@ Here in component -
 Const RestComponent = (props) => {
 	console.log(props);
 	return (
-		'<h1>Heading Test</h1>'
+		<h1>Heading Test</h1>
 );
 };
 
@@ -362,20 +312,20 @@ You can de-structure the props on the fly like below -
 Const RestComponent = ({resName, cuisine}) => {
 	console.log(props);
 	return (
-		'<h1>Heading Test</h1>'
+		<h1>Heading Test</h1>
 );
 };
 
 This is similar to do like this -
 Const {resName, cuisine} = props;
 
-* CONFIG-DRIVEN UI [System Design Interview in FrontEnd]:
+*** CONFIG-DRIVEN UI [System Design Interview in FrontEnd]:
 => UI is basically driven by config which will be needed from BackEnd. UI will be controlled by the data which will be sent by BackEnd.
 
-* Optional Chaining :
+### Optional Chaining :
 Const {name, cuisines, costFortwo} = resData?.data;
 
-* Render Cycle OPTIMISATION [importance of using KEYS]: whenever looping over any data for the component - always have to provide key attributes.
+*** Render Cycle OPTIMISATION [importance of using KEYS]: whenever looping over any data for the component - always have to provide key attributes.
 
 When there are components at the same level - React optimises Render Cycle. If there are no unique ids then react will re-render all the components again. Because react won’t understand which is the new component.
 So, if you add key to the component then react can easily understand the newly added component. And it will render only that one.
@@ -415,19 +365,19 @@ Folder structure -> src/components/
 Never keep your hardcoded data in Component file.
 Hardcoded URL / Strings/ Logos etc.
 
-### There are 2 types of import and export -
+*** There are 2 types of import and export -
 1. Default export/import - you use default export only once in a single file.
 	e.g. Export default Header;
 2. Named export/import - basically when you have to export multiple things from a single file we use this.
 	e.g. export const LOGO_URL = “https:www.oracle.com”;
 	Way to import named export - import { CDN_URL } from "../utils/constants";
 
-### H/W - Can we use Named export along with default export???
+*** H/W - Can we use Named export along with default export???
 
 TO FILTER THE RESTAURANTS BASED ON AVGRATING > 4
 resList = resList.filter((res) => res.data.avgRating > 4);
 
-* REACT HOOKS : ( Normal JS utility Functions )
+REACT HOOKS : ( Normal JS utility Functions )
 ———————
 State variable - super powerful variable - useState()
 
@@ -451,23 +401,23 @@ USE :
 
 Actual DOMs are the real TAGs like <DIV>, <IMG>
 
-* VIRTUAL DOM :
+### VIRTUAL DOM :
 VD is the representation of actual Dom.  
 It is nothing but normal JS object. 
 
-* Diff Algorithm :
+Diff Algorithm :
 Finds out the difference between two Virtual DOM. ( OLD vs NEW Virtual DOM )
 Then it calculate the difference and then finally this will actually update the DOM.
 
-* Reconciliation Algorithm [REACT Fiber] :
+Reconciliation Algorithm [REACT Fiber] :
 Whenever something changes in UI is known as Reconciliation.
 
-* Why react is fast?
+Why react is fast?
 Because of efficient Dom manipulation. It has virtual Dom. It uses diff algorithm.
 React Fiber - Reconciliation algorithm makes it fast.  React exactly knows what to change in DOM. It updates only the differences between old vs new DOM.
 Whenever state variable updates, react triggers reconciliation cycle (react re-renders component)
 
-* MONOLITH Architechture :
+*** MONOLITH Architechture :
 Having project with all utilities within it - 
 	- API 
 	- UI JSP
@@ -482,44 +432,43 @@ Fetch data -
 
 *** Shimmer UI - Until the page loads completely, it shows some dummy skeletons of the web page
 
-* Conditional Rendering - using which condition we call the Shimmer UI to show dummy data
+// Conditional Rendering - using which condition we call the Shimmer UI to show dummy data
 ### Rendering based on condition is known as Conditional Rendering
 
     if(restList.length === 0){
         return <Shimmer />
     }
 
-* useState - set function automatically renders the component with the latest values.
+*** useState - set function automatically renders the component with the latest values.
 
-* Input box and search  : To track the value of the input box, need to have local variable to store the value of input
+Input box and search  : To track the value of the input box, need to have local variable to store the value of input
 
 # Episode 7 : Routing, Dive deeper into Hooks
 
-* When is the useEffect Hook called?
+When is the useEffect Hook called?
 
-Ans : 
-    0. useEffect will be called whenever the component renders without dependency array. But because useEffect has optional dependency array as second argument, which changes the behaviour of component render.
+Ans : useEffect will be called whenever the component renders without dependency array. But because useEffect has optional dependency array as second argument, which changes the behaviour of component render.
 
-    1. If we pass empty = [] dependency array to useEffect. Then useEffect is called only once on initial render when the component is loaded.
+If we pass empty = [] dependency array to useEffect. Then useEffect is called only once on initial render when the component is loaded.
 
-    2. If we pass with some dependency -> then useEffect will only be called when the dependency changes.
+If we pass with some dependency -> then useEffect will only be called when the dependency changes.
 
 So here what can we have as dependency array?
 Ans : Suppose dependency array is [btnName] => then useEffect will be called every time btnName is updated.
 
-### Best Practices :
+*** Best Practices :
 1. Never use useState outside Functional Component.
 2. Always call useState on top of the component.
 3. Never create your useState const inside any conditions.
 4. Or any Loop/function bcz it is meant to be created inside functional component only.
 
 
-### ROUTING :
+*** ROUTING :
 React Router DOM Library
 
 Install react router dom : nam i react-router-dom
 
-* How to use this?
+How to use this?
 Will create About Us page to understand the concept -
 
 In App.js -
@@ -544,7 +493,7 @@ After this to work this routing, we have to pass appRouter to render.
 *** To handle ERROR React has provided with one HOOK - useRouteError from react-router-dom;
 So this will help the user understand the error happened by providing proper error message in UI.
 
-* Children Routes :
+*** Children Routes :
 
 We have to keep the Header and Footer Intact and only show the required page in between header and footer.
  ———————
@@ -561,25 +510,25 @@ We have to push children routes into app layout according to the path provided.
 
 And to provide that feature again react-router-dom comes into the picture with another component - OUTLET
 
-* OUTLET in react - Read it
+*** OUTLET in react - Read it
 
 When you are using REACT, never ever use ANCHOR TAG to navigate.
 Because it reloads the whole page to navigate.
 
-* Navigation of pages :
+*** Navigation of pages :
 You can navigate to your new page without reloading the whole page.
 This concept is known as Single Page Application.
 
-* LINK COMPONENT : which will help to navigate without reloading the whole page.
+LINK COMPONENT : which will help to navigate without reloading the whole page.
 This link component also comes from react-router-dom as well.
 
-### You can have 2 types of Routing -
+*** You can have 2 types of Routing -
 1. Client side routing : Here we already loaded pages. Whenever any specific page request comes, the page will be loaded again.
 2. Server side routing : make a network call -> requested page will be loaded by server based on the request.
 
-* Dynamic Route :
+*** Dynamic Route :
 
-* How to Write MAP() in JS:
+*** How to Write MAP() in JS:
 Here is an example of plane items fetching with map iteration -
 
 Suppose you want to print menu names from itemCards, then first track to the exact object where that information is stored.
@@ -594,14 +543,14 @@ Like => here in this case - { itemCards[0].card.info.name } is the exact navigat
 // To replace these 2 lines with a single MAP we can write like above.
 </ul>
 
-* ANOTHER HOOK to Read Params - useParam from react-router-dom
+*** ANOTHER HOOK to Read Params - useParam from react-router-dom
 
-* useParam :
-* LINK - key attribute while mapping/looping/filtering has to be in the parent JSX
+*** useParam :
+*** LINK - key attribute while mapping/looping/filtering has to be in the parent JSX
 Link Is a Wrapper over anchor TAG. Behind the scene it uses ANCHOR tag.
 Then why we use Link then - So that react can tract the element and it’s rendering. And Browser does not understand LINK. 
 
-* useRouteError : This hook helps to get the error while rendering.
+*** useRouteError : This hook helps to get the error while rendering.
 
 
 # EPISODE 8 : Lets get Classy
@@ -637,10 +586,10 @@ Example -
 	  	   }
 		}
 
-* Why do we have to write super(props)? === TASK R&D
+*** Why do we have to write super(props)? === TASK R&D
 —————————————————————————————————————————
 
-* How do we create state variable in class component?
+*** How do we create state variable in class component?
 ———————————————————————————————————————————————————————
 By creating a variable using this.state like below -
 	this.state = {
@@ -672,7 +621,7 @@ class UserClass extends React.Component {
 
 ### Never ever update state variable directly 
 
-* How do we update State Variable in class component?
+How do we update State Variable in class component?
 
 <button onClick={() => {
                     this.setState({
@@ -685,14 +634,14 @@ class UserClass extends React.Component {
 
 So if we update any one in setState -> it won’t touch any other state variable other than that.
 
-* Life cycle of Class Component :
+*** Life cycle of Class Component :
 First - constructor() - called
 Then - Render() called
 
-* componentDidMount () :
+*** componentDidMount () :
 After render method is called - > componentDidMount() is called in class based Component
 
-* Usecases of ComponentDidMount :
+Usecases of ComponentDidMount :
 There are somethings that we do after the component is mounted successfully-
 1. TO make API call
 	WHY ?
@@ -787,7 +736,7 @@ There are somethings that we do after the component is mounted successfully-
 	### Single Responsibility Principle
 
 
-### Without this you can’t optimise your app - Very important to SCALE your application :
+*** Without this you can’t optimise your app - Very important to SCALE your application :
 
 	Here in lazy loading, we call the component when it requires. To do that instead of import the component using import, we import the component using lazy() function provided 		by react. 	Here importing happens using the component folder location.
 		example = const Grocery = lazy(() => import(“./components/Grocery”));
@@ -815,7 +764,8 @@ You have to wrap the code sing Suspense Component to handle the component Suspen
 	SCSS = 
 	And Styled Component : React provides this to write better CSS
 
-### TAILWIND CSS : Tailwind CSS uses POSTCSS to transform CSS into Javascript
+
+	*** TAILWIND CSS : Tailwind CSS uses POSTCSS to transform CSS into Javascript
 	.postcssrc and tailwind.config.js - both we have to configure to use TAILWIND CSS.
 
 	Tailwind provides class names for every CSS that we write.
@@ -827,7 +777,7 @@ You have to wrap the code sing Suspense Component to handle the component Suspen
 # EPISODE 11 :  Data is the new OIL
 
 
-* HIGHER ORDER COMPONENT :
+### HIGHER ORDER COMPONENT :
 
 	Def : HOC is a function that takes a component and enhance it then returns the component. Normal JS function.
 
@@ -844,7 +794,7 @@ You have to wrap the code sing Suspense Component to handle the component Suspen
 
 ### PROPS DRILLING -> Passing values to Nested Children from Parent Component
 
-* USECONTEXT - To access values from any level of nested component to any component.
+*** USECONTEXT - To access values from any level of nested component to any component.
 	
 	const data = useContext(UserContext);
 
@@ -872,15 +822,15 @@ return (
         </UserContext.Provider>
     );
 
-* Can we have Nested UserContext.Provider???
+*** Can we have Nested UserContext.Provider???
 
 
 # EPISODE 12 :  Lets Build Our Store - REDUX TOOL KIT
 
-* REDUX - 	Redux is not the only library to manage data store.
+REDUX - 	Redux is not the only library to manage data store.
 	Advantage - handling data, managing states
 	Redux offers easy debugging.
-* Zustand - This is an another library which is used for managing states 		and gaining popularity. Lightweight.
+Zustand - This is an another library which is used for managing states 		and gaining popularity. Lightweight.
 
 
 	*** Dispatch an Action :
@@ -934,8 +884,38 @@ return (
 		1. React testing Library - RTL - comes with create react-app
 			This library uses JEST framework - delightful Javascript testing framework with a focus on simplicity. Uses Babel.
 
-	# Setting up testing in our app
+	### Setting up testing in our app
 		1. Install React Testing Library
 		2. Install JEST
 		3. Install Babel Dependencies
 		4. Setup babel.config.js - 
+		5. Configure BABEL for Parcel - 
+			- create .parcelrc file and copy the config from parcel website
+			- search JEST in parcel documentation - copy Javascript use for other tools
+			- To disable Babel transpilation in Parcel
+		6. Jest Configuration - npx jest —init
+		7. Install jsdom library - npm install --save-dev jest-environment-jsdom
+		8. To support JSX in testcase - install 
+				- npm i -D @babel/preset-react
+		9. Include @babel/preset-react inside Babel config
+		10. Install - @testing-library/jest-dom
+
+		- - : Is Known as Dunder
+		- - tests - Under Test
+
+	###  TEST function accepts - 2 arguments - 
+		1. String - description of test case
+		2. Callback function - implementation of test case
+
+
+	### To group test cases - 
+		use - 
+			describe(“Description of test group”, () => {
+				// Test case 1
+				// Test case 2
+				…..
+			});
+
+	*** YOU CAN WRITE IT/TEST = both are same IT is the ALIAS of TEST.
+
+
