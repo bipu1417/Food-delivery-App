@@ -1,3 +1,14 @@
+# Food Delivery App:
+* A swiggy food delivery app clone with features like
+  	- Add to Cart option
+  	- Shimmer UI for better user experience,
+  	- Search functionalities - for restaurant list,
+  	- userOnline Status using custom Hook
+  	- Filter Top rated restaurant using button - rating > 4.0
+  	- Clear Cart
+  	- 
+  ### Tech stacks - React JS, Tailwind CSS, Redux Toolkit
+
 # Demo video of the Project:
 
 https://github.com/bipu1417/Food-delivery-App/assets/15422942/440c3e64-00ac-433f-915e-73e9699aca8d
